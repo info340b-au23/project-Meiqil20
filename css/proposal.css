@@ -35,6 +35,7 @@ body {
 
 
 
+
 /* #faebd7;  */
 
 /* CSS for Compare Page */
@@ -57,3 +58,7 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to bottom, #fcdcb5, antiquewhite);
   }
+
+.search_bar_width {
+    width: 300px;
+}
