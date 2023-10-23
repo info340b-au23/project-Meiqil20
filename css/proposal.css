@@ -60,6 +60,10 @@ body {
 }
 
 footer {
+    width: 100%;
+    position:fixed;
+    bottom:0;
+    left:0;
     background-color: #dcc8c2;
     font-size: 16px;
     color: black;
@@ -79,7 +83,9 @@ footer a {
     max-width: none;
 }
 
-
+.dropdown {
+    display: inline;
+}
 
 
 

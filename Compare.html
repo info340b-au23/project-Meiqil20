@@ -8,7 +8,6 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&family=Raleway&display=swap">
   <link rel="stylesheet" href="css/proposal.css">
   <title>Housing-UW-Compare</title>
 </head>
@@ -16,10 +15,10 @@
 <body class="compareBody">
   <nav class="navbar navbar-expand-lg justify-content-between gradient-custom">
     <div class="container-fluid">
-      <a class="navbar-brand mx-4" href="#">HousingUW 
+      <a class="navbar-brand mx-4" href="#">HousingUW
         <img class="pb-1" src="img/house-icon.png" alt="An icon for the website" width="40" height="40">
       </a>
-      
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -39,9 +38,34 @@
 
   </nav>
 
-  <div class="container mt-4">
-    <h1>Compare Page</h1>
-    
+  <div class="container mb-4">
+    <h1>Compare housing choices next to UW</h1>
+    <p>Select two housing choices to compare: </p>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Select All Housing
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Select All Housing
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+
+    <button class="btn btn-warning mx-4 my-4" type="submit">Apply Search</button>
 
 
 
@@ -95,13 +119,15 @@
       </tbody>
     </table>
 
-  <footer>
-    <div class="container">
-      <span class="m-0"><a href="mailto:xiangw9@uw.edu"><span class="material-icons">email</span> xiangw9@uw.edu</a></span>
-      <span class="m-0"><a href="tel:425-295-4569"><span class="material-icons">phone</span> 4252954569</a></span>
-      <p class="pt-2">&copy; 2023 HousingUW All Rights Reserved <span class="px-4">Created by Bonie Wang, Maggie Liang</span></p>
-    </div>
-  </footer>  
+    <footer>
+      <div class="container">
+        <span class="m-0"><a href="mailto:xiangw9@uw.edu"><span class="material-icons">email</span>
+            xiangw9@uw.edu</a></span>
+        <span class="m-0"><a href="tel:425-295-4569"><span class="material-icons">phone</span> 4252954569</a></span>
+        <p class="pt-2">&copy; 2023 HousingUW All Rights Reserved <span class="px-4">Created by Bonie Wang, Maggie
+            Liang</span></p>
+      </div>
+    </footer>
 
 
 </body>
