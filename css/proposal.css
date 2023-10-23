@@ -12,7 +12,7 @@ body {
     font-size: 20px;
     margin-left: 10px auto;
     margin-right: 10px auto;
-    background-color:antiquewhite
+    background-color:antiquewhite；
 }
 
 #problem-description li {
@@ -25,9 +25,9 @@ body {
 }
 
 
-
-
-
+.card-title{
+    font-size: 24px;
+}
 
 
 
@@ -57,3 +57,29 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to bottom, #fcdcb5, antiquewhite);
   }
+
+
+.pb-3{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
