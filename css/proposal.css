@@ -144,27 +144,33 @@ footer a {
     cursor: pointer;
 }
 
-
-
 .first {
     margin-left: 20px;
 }
 
+#sign_up {
+    text-align: center;
+}
 
+#login {
+    text-align: center;
+}
 
+#button {
+    margin-top: 10px;
+    background-color: pink;
+    width: 100px;
+    border-radius: 10px;
+}
 
+#email {
+    border-radius: 10px;
+}
 
+#password {
+    border-radius: 10px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+#login_box {
+    margin-top: 50px;
+}
