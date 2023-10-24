@@ -1,3 +1,4 @@
+/* General rules that apply to every page */
 header h1 {
     text-align: center;
 }
@@ -13,7 +14,7 @@ body {
     margin-left: 10px auto;
     margin-right: 10px auto;
     background-color:antiquewhite;
-   
+    padding-bottom: 80px;
 }
 
 #problem-description li {
@@ -25,19 +26,6 @@ body {
     font-style: oblique;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* #faebd7;  */
 
 /* CSS for Compare Page */
 
