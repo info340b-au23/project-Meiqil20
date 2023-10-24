@@ -12,7 +12,8 @@ body {
     font-size: 20px;
     margin-left: 10px auto;
     margin-right: 10px auto;
-    background-color:antiquewhite
+    background-color:antiquewhite;
+   
 }
 
 #problem-description li {
@@ -42,6 +43,7 @@ body {
 
 .compareBody {
     background-color: antiquewhite;
+    padding-bottom: 80px;
 }
 
 .gradient-custom {
