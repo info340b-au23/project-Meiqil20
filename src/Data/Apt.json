@@ -3,7 +3,7 @@
   {
     "name": "Trailside",
     "img": "img/Trailside.jpg",
-    "dist_to_uw": 0.9,
+    "dist_to_uw": "0.9",
     "loc_to_uw":"Northeast",
     "rating": 2.8,
     "floorplan": "Sudio-S1",

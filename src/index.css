@@ -76,3 +76,131 @@ footer a {
 .dropdown {
     display: inline;
 }
+
+
+
+
+
+
+
+
+
+/* CSS for home page */
+.pb-3{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.img-size{
+    width: 1000px;
+    height: 200px;
+}
+
+.card-title{
+    font-size: 24px;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.card-img-hover:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+.location {
+    width: 30%;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.distance {
+    width: 40%;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.star-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 36px;
+    color: transparent; /* Make the icon transparent */
+    -webkit-text-stroke: 1px rgb(0, 0, 0); /* Add black outline (edges) to the icon */
+    cursor: pointer;
+}
+
+.first {
+    margin-left: 20px;
+}
+
+#sign_up {
+    text-align: center;
+}
+
+#login {
+    text-align: center;
+}
+
+#button {
+    margin-top: 10px;
+    background-color: pink;
+    width: 100px;
+    border-radius: 10px;
+}
+
+#email {
+    border-radius: 10px;
+}
+
+#password {
+    border-radius: 10px;
+}
+
+#login_box {
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+/* CSS for home page */
+.pb-3{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.card-title{
+    font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
