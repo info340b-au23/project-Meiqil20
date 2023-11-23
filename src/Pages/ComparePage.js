@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 
 function AptTable(props) {
     const aptTableRows = props.apts.map((apt, index) => {
@@ -50,45 +49,66 @@ function TableRow(props) {
 function GenerateFloorPlan(props) {
     const floorPlansOptions = props.floorPlans.map((options, index) => (
         <span key={index} className="badge badge-primary badge-pill bg-primary floor-plan-pill">{options}</span>
-      ));
+    ));
 
     return <div>{floorPlansOptions}</div>;
 }
 
 export function ComparePage(props) {
 
+    const [Apt1, setApt1] = useState("");
+    const [Apt2, setApt2] = useState("");
+    const [filterCriteria, setFilter] = useState({ Apt1: '', Apt2: '' });
+
+    function handleSelect1(event) {
+        setApt1(event.target.value);
+    }
+
+    function handleSelect2(event) {
+        setApt2(event.target.value);
+    }
+
+    const optionElems = props.apts.map((apt) => {
+        return <option key={apt.name} value={apt.name}>{apt.name}</option>
+    })
+
+    function applyFilter(AptName1, AptName2) {
+        setFilter({ Apt1: AptName1, Apt2: AptName2 });
+    }
+
+    const displayedData = props.apts.filter(apt => {
+        if (filterCriteria.Apt1 === '' || filterCriteria.Apt2 === '') {
+            return apt;
+        } else {
+            return apt.name === filterCriteria.Apt1 || apt.name === filterCriteria.Apt2;
+        }
+    })
+
     return (
         <div>
             <div className="container mb-4">
                 <h1>Compare housing choices next to UW</h1>
                 <p>Select two housing choices to compare: </p>
-                <div className="dropdown">
-                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Select All Housing
-                    </button>
-                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        {/* <a className="dropdown-item" href="#">Action</a>
-                        <a className="dropdown-item" href="#">Another action</a>
-                        <a className="dropdown-item" href="#">Something else here</a> */}
+                <div className="row align-items-center mb-3">
+                    <div className="col-auto">
+                        <select id="teamSelect" className="form-select" value={Apt1} onChange={handleSelect1}>
+                            <option value="">Show all Housing</option>
+                            {optionElems}
+                        </select>
+                    </div>
+
+                    <div className="col-auto">
+                        <select id="teamSelect" className="form-select" value={Apt2} onChange={handleSelect2}>
+                            <option value="">Show all Housing</option>
+                            {optionElems}
+                        </select>
+                    </div>
+
+                    <div className="col-auto">
+                        <button id="submitButton" type="submit" className="btn btn-warning" onClick={() => applyFilter(Apt1, Apt2)} >Apply Filter</button>
                     </div>
                 </div>
-
-                <div className="dropdown">
-                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Select All Housing
-                    </button>
-                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        {/* <a className="dropdown-item" href="#">Action</a>
-                        <a className="dropdown-item" href="#">Another action</a>
-                        <a className="dropdown-item" href="#">Something else here</a> */}
-                    </div>
-                </div>
-
-                <button className="btn btn-warning mx-4 my-4" type="submit">Apply Search</button>
-
-                <AptTable apts={props.apts} />
+                <AptTable apts={displayedData} />
             </div>
         </div>
     )

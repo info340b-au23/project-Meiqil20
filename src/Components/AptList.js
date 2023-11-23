@@ -16,7 +16,7 @@ function AptCard(props) {
             </div>
             <div className="tag_container">
                 <span className="badge badge-primary badge-pill bg-primary location">{props.aptData.loc_to_uw}</span>
-                <span className="badge badge-primary badge-pill bg-primary distance">{props.aptData.dis_to_uw + "miles"} </span>
+                <span className="badge badge-primary badge-pill bg-primary distance">{props.aptData.distance} miles</span>
             </div>
             <i
                 className="material-icons star-icon"
