@@ -4,13 +4,6 @@ import { ApartmentList, AptList } from '../Components/AptList.js';
 
 export function HomePage(props) {
 
-    const [isSaved, setIsSaved] = useState(false);
-  
-    const handleSaveToggle = () => {
-      setIsSaved(!isSaved);
-    };
-
-
   const [filterName, setFilterName] = useState('');
   const [filterDistance, setfilterDistance] = useState(null);
   const [filterPrice, setfilterPrice] = useState(null);
@@ -80,7 +73,7 @@ export function HomePage(props) {
                 </div>
 
                 <div className="container">
-                    <AptList apts={props.apts} isSaved={isSaved} handleSaveToggle={handleSaveToggle} />
+                    <AptList apts={props.apts}/>
                 </div>
             </main >
 

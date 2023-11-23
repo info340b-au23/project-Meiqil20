@@ -3,29 +3,49 @@ import apartmentData from '../Data/Apt.json';
 
 function AptCard(props) {
     return (
-        <div className="card">
-            <div className="card-body">
-                <div class="row">
-                    <div className="col-sm-auto col-xl-12">
-                        <a href="aptinfo.html"><img className="pb-3 card-img-hover img-size" src={props.aptData.img} alt={props.aptData.name} /></a>
+        <div className="card card-flip h-100" >
+            <div class="card-front">
+                <div className="card-body">
+                    <div class="row">
+                        <div className="col-sm-auto col-xl-12">
+                            <a href="aptinfo.html"><img className="pb-3 card-img-hover img-size" src={props.aptData.img} alt={props.aptData.name} /></a>
+                        </div>
+                        <div className="col-sm card-content">
+                            <h2 className="card-title">{props.aptData.name}</h2>
+                        </div>
                     </div>
-                    <div className="col-sm card-content">
-                        <h2 className="card-title">{props.aptData.name}</h2>
+
+                    <div className="tag_container">
+                        <span className="badge badge-primary badge-pill bg-primary location">{props.aptData.loc_to_uw}</span>
+                        <span className="badge badge-primary badge-pill bg-primary distance">{props.aptData.distance} miles</span>
+                        <span className="badge badge-primary badge-pill bg-primary distance">Rating:{props.aptData.rating}</span>
+                    </div>
+                    {/* <i
+                        className="material-icons star-icon"
+                        onClick={props.handleSaveToggle}
+                        style={{ cursor: 'pointer', color: props.isSaved ? '#FF0000' : 'transparent' }}
+                    >
+                        {props.isSaved ? 'favorite' : 'favorite_border'}
+                    </i> */}
+                </div>
+
+            </div>
+            <div class="card-back">
+                <div className="card-body">
+                    <div class="row">
+                        <div className="col-sm-auto col-xl-12">
+                        <a href={props.aptData.website} target="blank"><h4 className= "apt-name">{props.aptData.name}</h4></a>
+                            {/* <p className="back-info">Floorplan: {props.aptData.floorplan} </p> */}
+                            <p className="back-info">Average Price: ${props.aptData.price} </p>
+                            {/* <p className="back-info">Size: {props.aptData.size} Sq ft.</p> */}
+                            <p className="back-info">Phone: {props.aptData.phone} </p>
+                            <p className="back-info">Address: {props.aptData.address} </p>
+                        </div>
                     </div>
                 </div>
+
             </div>
-            <div className="tag_container">
-                <span className="badge badge-primary badge-pill bg-primary location">{props.aptData.loc_to_uw}</span>
-                <span className="badge badge-primary badge-pill bg-primary distance">{props.aptData.distance} miles</span>
-            </div>
-            <i
-                className="material-icons star-icon"
-                onClick={props.handleSaveToggle}
-                style={{ cursor: 'pointer', color: props.isSaved ? '#FF0000' : 'transparent' }}
-            >
-                {props.isSaved ? 'favorite' : 'favorite_border'}
-            </i>
-        </div>
+        </div >
     );
 
 }
