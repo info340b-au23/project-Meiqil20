@@ -25,7 +25,7 @@ export function NavBar() {
           <button className="btn btn-outline-success mx-4" type="submit">Search</button>
         </form>
     
-        <Link to="/Pages/login"><button type="button" className="btn btn-warning mx-4" style={{'white-space': 'nowrap'}}>Log In</button></Link> 
+        <Link to="/Pages/login"><button type="button" className="btn btn-warning mx-4" style={{'whiteSpace': 'nowrap'}}>Log In</button></Link> 
     
       </nav>
     )

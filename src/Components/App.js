@@ -20,7 +20,7 @@ function App(props) {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage apts={props.apts}/>}/>
-        <Route path="/Pages/compare" element={<ComparePage/>}/>
+        <Route path="/Pages/compare" element={<ComparePage apts={props.apts}/>}/>
         <Route path="/Pages/list" element={<ListPage/>}/>
         <Route path="/Pages/login" element={<LoginPage/>}/>
       </Routes>
