@@ -1,30 +1,31 @@
 import React, { useState } from 'react';
-import { ApartmentList, AptList } from '../Components/AptList.js';
+import { AptList } from '../Components/AptList.js';
+import _ from 'lodash';
 
 
 export function HomePage(props) {
 
-  const [filterName, setFilterName] = useState('');
-  const [filterDistance, setfilterDistance] = useState(null);
-  const [filterPrice, setfilterPrice] = useState(null);
-  const [filterSize, setfilterSize] = useState(null);
-  const [filterRating, setFilterRating] = useState(null);
+    let sortingListItem = ["name", "distance", "rating", "price"];
+    const [SortName, setSort] = useState("");
+    const [filterCriteria, setFilter] = useState({Sort: ""});
 
-  const handleFilterNameChange = (event) => {
-    setFilterName(event.target.value);
-  };
-  const handleFilterDistanceChange = (event) => {
-    setfilterDistance(parseFloat(event.target.value) || null);
-  };
-  const handleFilterPriceChange = (event) => {
-    setfilterPrice(parseFloat(event.target.value) || null);
-  };
-  const handleFilterSizeChange = (event) => {
-    setfilterSize(parseFloat(event.target.value) || null);
-  };
-  const handleFilterRatingChange = (event) => {
-    setFilterRating(parseFloat(event.target.value) || null);
-  };
+    function handleSort(event) {
+        setSort(event.target.value);
+    }
+
+    const optionElems = sortingListItem.map((sortingOptions) => {
+        return <option key={sortingOptions} value={sortingOptions}>{sortingOptions}</option>
+    })
+
+    function applyFilter(Sort) {
+        setFilter({Sort: Sort});
+    }
+
+    let displayedData = props.apts;
+
+    if(filterCriteria.Sort !== "" ) {
+        displayedData = _.sortBy(props.apts, filterCriteria.Sort);
+    }
 
     return (
         <div>
@@ -35,45 +36,38 @@ export function HomePage(props) {
             </header>
             <main>
 
-                <div className="ButtonContainer justify-content-between">
+                <div className="row align-items-center mb-3">
+                    <div className="col-auto">
+                        <select id="teamSelect" className="form-select Sorting-Options" value={SortName} onChange={handleSort}>
+                            <option value="">Show All Sorting Options</option>
+                            {optionElems}
+                        </select>
+                    </div>
+
+                    {/* <Slider
+                        getAriaLabel={() => 'Temperature range'}
+                        value={value}
+                        onChange={handleChange}
+                        valueLabelDisplay="auto"
+                        getAriaValueText={valuetext}
+                    /> */}
+
+                    {/* <div className="col-auto">
+                        <select id="teamSelect" className="form-select" value={Apt2} onChange={handleSelect2}>
+                            <option value="">Show all Housing</option>
+                            {optionElems}
+                        </select>
+                    </div> */}
+
+                    
+
+                    <div className="col-auto">
+                        <button id="submitButton" type="submit" className="btn btn-warning" onClick={() => applyFilter(SortName)} >Apply Filter</button>
+                    </div>
                 </div>
 
                 <div className="container">
-                    <form>
-                        <label>
-                            Filter by Name:
-                            <input type="text" value={filterName} onChange={handleFilterNameChange} />
-                        </label>
-                        <label>
-                            Filter by Distance (less than 0.9):
-                            <input type="number" value={filterDistance} onChange={handleFilterDistanceChange} />
-                        </label>
-                        <label>
-                            Filter by Price:
-                            <input type="number" value={filterPrice} onChange={handleFilterPriceChange} />
-                        </label>
-                        <label>
-                            Filter by Size:
-                            <input type="number" value={filterSize} onChange={handleFilterSizeChange} />
-                        </label>
-                        <label>
-                            Filter by Rating:
-                            <input type="number" value={filterRating} onChange={handleFilterRatingChange} />
-                        </label>
-                    </form>
-
-                    <ApartmentList
-                        apartment={props.apts}
-                        filtername={filterName}
-                        filterDistance={filterDistance}
-                        filterPrice={filterPrice}
-                        filterSize={filterSize}
-                        filterRating={filterRating}
-                    />
-                </div>
-
-                <div className="container">
-                    <AptList apts={props.apts}/>
+                    <AptList apts={displayedData} />
                 </div>
             </main >
 

@@ -1,5 +1,5 @@
 import React from "react";
-import apartmentData from '../Data/Apt.json';
+// import apartmentData from '../Data/Apt.json';
 
 function AptCard(props) {
     return (
@@ -62,18 +62,18 @@ function AptList(props) {
     return <div className="row">{aptCards}</div>;
 }
 
-function ApartmentList({ apartment, filterName, filterDistance, filterPrice, filterSize, filterRating }) {
-    const filteredApartments = apartmentData.filter((apartment) => {
-        const nameMatchesFilter = !filterName || (apartment.name && apartment.name.toLowerCase().indexOf(filterName.toLowerCase())) !== -1;
-        const distanceMatchesfilter = filterDistance === null || apartment.dist_to_uw <= filterDistance;
-        const priceMatchesFilter = filterPrice === null || apartment.price <= filterPrice;
-        const sizeMatchesFilter = filterSize === null || apartment.size <= filterSize;
-        const ratingMatchesFilter = filterRating === null || apartment.rating >= filterRating;
+// function ApartmentList({ apartment, filterName, filterDistance, filterPrice, filterSize, filterRating }) {
+//     const filteredApartments = apartmentData.filter((apartment) => {
+//         const nameMatchesFilter = !filterName || (apartment.name && apartment.name.toLowerCase().indexOf(filterName.toLowerCase())) !== -1;
+//         const distanceMatchesfilter = filterDistance === null || apartment.dist_to_uw <= filterDistance;
+//         const priceMatchesFilter = filterPrice === null || apartment.price <= filterPrice;
+//         const sizeMatchesFilter = filterSize === null || apartment.size <= filterSize;
+//         const ratingMatchesFilter = filterRating === null || apartment.rating >= filterRating;
 
-        const apartmentPassesAllFilters = nameMatchesFilter && distanceMatchesfilter && priceMatchesFilter && sizeMatchesFilter && ratingMatchesFilter;
+//         const apartmentPassesAllFilters = nameMatchesFilter && distanceMatchesfilter && priceMatchesFilter && sizeMatchesFilter && ratingMatchesFilter;
 
-        return apartmentPassesAllFilters;
-    });
+//         return apartmentPassesAllFilters;
+//     });
 
     // return ( 
     //     <div> 
@@ -96,8 +96,8 @@ function ApartmentList({ apartment, filterName, filterDistance, filterPrice, fil
     //         ))}
     //     </div>
     // ); 
-}
+// }
 
 
 
-export { AptList, ApartmentList }; 
+export { AptList }; 
