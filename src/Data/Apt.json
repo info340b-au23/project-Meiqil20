@@ -2,7 +2,7 @@
  [
   {
     "name": "Trailside",
-    "img": "img/Trailside.jpg",
+    "img": "/img/Trailside.jpg",
     "dist_to_uw": "0.9",
     "loc_to_uw":"Northeast",
     "rating": 2.8,
@@ -15,7 +15,7 @@
   },
   {
     "name": "Bridges@11th",
-    "img": "img/Bridges@11.jpg",
+    "img": "/img/Bridges@11.jpg",
     "dist_to_uw": 0.9,
     "loc_to_uw":"Northwest",
     "rating": 3.4,
@@ -28,7 +28,7 @@
   },
   {
     "name": "ōLiv Seattle",
-    "img": "img/Oliv.jpg",
+    "img": "/img/Oliv.jpg",
     "dist_to_uw": 0.8,
     "loc_to_uw":"Northwest",
     "rating": 4.6,
@@ -41,12 +41,12 @@
   },
   {
     "name": "HERE Seattle",
-    "img": "img/Here.jpeg",
+    "img": "/img/Here.jpeg",
     "dist_to_uw": 0.9,
     "loc_to_uw":"Northwest",
     "rating": 3.3,
     "floorPlan": ["1 Bedroom", "2 Bedrooms", "4 Bedrooms", "5 Bedrooms"],
-    "price": 0,
+    "price": 1947,
     "size": 492,
     "website": "https://www.heresea.com/",
     "phone": "206-219-0702",
@@ -54,7 +54,7 @@
   },
   {
     "name": "Arista Residences",
-    "img": "img/Arista.jpg",
+    "img": "/img/Arista.jpg",
     "dist_to_uw": 0.8,
     "loc_to_uw":"Northeast",
     "rating": 4.4,
@@ -67,7 +67,7 @@
   },
   {
     "name": "The Accolade",
-    "img": "img/Accolade.png",
+    "img": "/img/Accolade.png",
     "dist_to_uw": 0.7,
     "loc_to_uw":"Northwest",
     "rating": 3.5,
@@ -80,12 +80,12 @@
   },
   {
     "name": "The Standard at Seattle",
-    "img": "img/Standard.jpg",
+    "img": "/img/Standard.jpg",
     "dist_to_uw": 0.6,
     "loc_to_uw":"Northwest",
     "rating": 4.9,
     "floorPlan": ["Studio", "1 Bedroom", "2 Bedrooms", "3 Bedrooms", "4 Bedrooms", "5 Bedrooms", "6 Bedrooms"],
-    "price": 0,
+    "price": 1803,
     "size": 374,
     "website": "https://www.thestandardseattle.com/",
     "phone": "206-844-1818 ",
@@ -93,7 +93,7 @@
   },
   {
     "name": "TWELVE at U District",
-    "img": "img/Twelve.jpg",
+    "img": "/img/Twelve.jpg",
     "dist_to_uw": 0.8,
     "loc_to_uw":"Northwest",
     "rating": 3.4,

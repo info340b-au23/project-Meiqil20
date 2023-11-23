@@ -7,7 +7,7 @@ export function NavBar() {
         <nav className="navbar navbar-expand-lg justify-content-between gradient-custom">
         <div className="container-fluid">
           <Link to="/" className="navbar-brand mx-4">HousingUW
-            <img className="pb-1" src="img/house-icon.png" alt="An icon for the website" width="40" height="40" />
+            <img className="pb-1" src="/img/house-icon.png" alt="An icon for the website" width="40" height="40" />
           </Link>
     
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

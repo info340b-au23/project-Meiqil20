@@ -31,10 +31,10 @@ function AptCard(props) {
 }
 
 function AptList(props) {
-    const aptCards = props.apts.map((apt) => {
+    const aptCards = props.apts.map((apt, index) => {
         return (
             <div className="col-md-6 col-xl-3 d-flex mb-4">
-                <AptCard aptData={apt} />
+                <AptCard key={index} aptData={apt} />
             </div>
         );
     });

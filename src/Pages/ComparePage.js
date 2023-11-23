@@ -2,9 +2,9 @@ import React from 'react';
 
 
 function AptTable(props) {
-    const aptTableRows = props.apts.map((apt) => {
+    const aptTableRows = props.apts.map((apt, index) => {
         return (
-            <TableRow aptData={apt} />
+            <TableRow key={index} aptData={apt} />
         )
     });
 
@@ -36,7 +36,7 @@ function TableRow(props) {
         <tr>
             <td>{name}</td>
             <td>
-                <img className="pb-1 img-fluid" src={img} alt={name} width="480" height="320" />
+                <img className="pb-1 img-fluid floor-plan-pill" src={img} alt={name} width="480" height="320" />
             </td>
             <td>
                 <GenerateFloorPlan floorPlans={floorPlan} />
@@ -49,7 +49,7 @@ function TableRow(props) {
 
 function GenerateFloorPlan(props) {
     const floorPlansOptions = props.floorPlans.map((options, index) => (
-        <span key={index} className="badge badge-primary badge-pill bg-primary">{options}</span>
+        <span key={index} className="badge badge-primary badge-pill bg-primary floor-plan-pill">{options}</span>
       ));
 
     return <div>{floorPlansOptions}</div>;
@@ -68,9 +68,9 @@ export function ComparePage(props) {
                         Select All Housing
                     </button>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a className="dropdown-item" href="#">Action</a>
+                        {/* <a className="dropdown-item" href="#">Action</a>
                         <a className="dropdown-item" href="#">Another action</a>
-                        <a className="dropdown-item" href="#">Something else here</a>
+                        <a className="dropdown-item" href="#">Something else here</a> */}
                     </div>
                 </div>
 
@@ -80,9 +80,9 @@ export function ComparePage(props) {
                         Select All Housing
                     </button>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a className="dropdown-item" href="#">Action</a>
+                        {/* <a className="dropdown-item" href="#">Action</a>
                         <a className="dropdown-item" href="#">Another action</a>
-                        <a className="dropdown-item" href="#">Something else here</a>
+                        <a className="dropdown-item" href="#">Something else here</a> */}
                     </div>
                 </div>
 
