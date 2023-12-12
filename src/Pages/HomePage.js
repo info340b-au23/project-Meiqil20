@@ -8,9 +8,15 @@ export function HomePage(props) {
   const [filterCriteria, setFilter] = useState({ Sort: "" });
   const [searchQuery, setSearchQuery] = useState("");
 
+<<<<<<< HEAD
   function handleSort(event) {
     setSort(event.target.value);
   }
+=======
+    let sortingListItem = ["Name", "Distance", "Rating", "Price"];
+    const [SortName, setSort] = useState("");
+    const [filterCriteria, setFilter] = useState({Sort: ""});
+>>>>>>> 983fc2c649ce2b95fcc7187b1a555249525c6779
 
   function handleSearch(event) {
     setSearchQuery(event.target.value);

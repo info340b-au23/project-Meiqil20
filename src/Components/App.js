@@ -5,9 +5,7 @@ import { HomePage } from '../Pages/HomePage.js'
 import { ComparePage } from '../Pages/ComparePage.js'
 import { ListPage } from '../Pages/ListPage.js'
 import { LoginPage } from '../Pages/LoginPage.js'
-//this does NOT yet filter by alphabetic for the name. I got tired lol
-// had the issue of converting input string numerics to actual floats. Thats where I searched the internet and found ParseFloat. If anyone has 
-// another solution, I'm down for that
+
 //https://www.freecodecamp.org/news/how-to-convert-a-string-to-a-number-in-javascript/
 
 
