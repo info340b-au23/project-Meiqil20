@@ -75,7 +75,7 @@
     "price": 2169,
     "size": 395,
     "website": "https://www.theaccoladeudistrict.com/",
-    "phone": "206-445-0263 ",
+    "phone": "206-445-0263",
     "address": "4126 12th Ave NE, Seattle, WA 98105"
   },
   {
@@ -88,7 +88,7 @@
     "price": 1803,
     "size": 374,
     "website": "https://www.thestandardseattle.com/",
-    "phone": "206-844-1818 ",
+    "phone": "206-844-1818",
     "address": "4220 12th Ave NE, Seattle, WA 98105"
   },
   {
@@ -101,7 +101,59 @@
     "price": 2025,
     "size": 500,
     "website": "https://www.americancampus.com/student-apartments/wa/seattle/TWELVE-at-u-district",
-    "phone": "206-729-7777 ",
+    "phone": "206-729-7777",
     "address": "4535 12th Ave NE, Seattle, WA 98105"
+  },
+  {
+    "name": "Theory U District",
+    "img": "/img/Theory.jpg",
+    "distance": 0.8,
+    "loc_to_uw":"Northwest",
+    "rating": 4.7,
+    "floorPlan": ["Studio", "1 Bedroom", "2 Bedrooms", "3 Bedrooms", "4 Bedrooms", "5 Bedrooms"],
+    "price": 2059,
+    "size": 355,
+    "website": "https://theoryudistrict.com/",
+    "phone": "206-486-8667",
+    "address": "4759 15th Ave NE, Seattle, WA 98105"
+  },
+  {
+    "name": "Nordheim Court",
+    "img": "/img/Nordheim.jpg",
+    "distance": 0.9,
+    "loc_to_uw":"Northeast",
+    "rating": 4.2,
+    "floorPlan": ["Studio", "2 Bedroom", "4 Bedrooms"],
+    "price": 1838,
+    "size": 330,
+    "website": "https://hfs.uw.edu/live-on-campus/Graduate-Housing/Nordheim-Court-Grad",
+    "phone": "206-897-1200",
+    "address": "5000 25th Ave NE, Seattle, WA 98105"
+  },
+  {
+    "name": "The M Seattle",
+    "img": "/img/TheM.jpg",
+    "distance": 0.8,
+    "loc_to_uw":"Northwest",
+    "rating": 3.4,
+    "floorPlan": ["Studio", "1 Bedroom", "2 Bedrooms", "3 Bedrooms", "4 Bedrooms"],
+    "price": 2100,
+    "size": 295,
+    "website": "https://www.themseattle.com/",
+    "phone": "206-219-1477",
+    "address": "4700 Brooklyn Ave NE, Seattle, WA 98105"
+  },
+  {
+    "name": "Lander Hall",
+    "img": "/img/Lander.jpg",
+    "distance": 0.4,
+    "loc_to_uw":"Northwast",
+    "rating": 4.2,
+    "floorPlan": ["Studio", "1 Bedroom", "2 Bedroom", "3 Bedrooms"],
+    "price": 1912,
+    "size": 278,
+    "website": "https://hfs.uw.edu/live-on-campus/Undergraduate-Housing/Lander-Hall",
+    "phone": "206-897-1200",
+    "address": "1201 NE Campus Parkway, Seattle, WA 98105"
   }
 ]
