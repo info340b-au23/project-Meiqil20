@@ -34,9 +34,9 @@ function AptCard(props) {
                 </div>
 
             </div>
-            <div class="card-back">
+            <div className="card-back">
                 <div className="card-body">
-                    <div class="row">
+                    <div className="row">
                         <div className="col-sm-auto col-xl-12">
                             <a href={props.aptData.website} target="blank"><h4 className="apt-name">{props.aptData.name}</h4></a>
                             {/* <p className="back-info">Floorplan: {props.aptData.floorplan} </p> */}
