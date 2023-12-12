@@ -129,14 +129,10 @@ footer a {
     height: 100%;
 }
 
-.star-icon {
+.like {
     position: absolute;
     bottom: 10px;
     right: 10px;
-    font-size: 36px;
-    color: transparent; /* Make the icon transparent */
-    -webkit-text-stroke: 1px rgb(0, 0, 0); /* Add black outline (edges) to the icon */
-    cursor: pointer;
 }
 
 .first {
@@ -171,13 +167,6 @@ footer a {
 }
 
 
-
-
-
-
-
-
-
 /* CSS for home page */
 .pb-3{
     max-width: 100%;
@@ -200,11 +189,6 @@ footer a {
 }
 
 
-
-
-
-
-
 .card-flip > div {
     backface-visibility: hidden;
     transition: transform 400ms;
@@ -224,15 +208,8 @@ footer a {
     position: absolute;
     top: 0;
     height: 100%; 
-  /* overflow: auto; 
-  display: flex;
-  flex-direction: column;  */
   }
 
-  /* .card-back .card-body {
-    flex: 1; 
-  } */
-  
   .card-flip:hover .card-front {
     transform: rotateY(-180deg);
   }

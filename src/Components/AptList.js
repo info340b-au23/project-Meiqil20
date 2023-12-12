@@ -1,12 +1,23 @@
-import React from "react";
-// import apartmentData from '../Data/Apt.json';
+import React, { useState } from 'react';
 
 function AptCard(props) {
+    const [isLiked, setIsLiked] = useState(false);
+
+    const handleClick = (event) => {
+        console.log("you liked a post!");
+        setIsLiked(!isLiked);
+    }
+
+    let heartColor = 'grey';
+    if (isLiked) {
+        heartColor = 'red';
+    }
+
     return (
         <div className="card card-flip h-100" >
-            <div class="card-front">
+            <div className="card-front">
                 <div className="card-body">
-                    <div class="row">
+                    <div className="row">
                         <div className="col-sm-auto col-xl-12">
                             <a href="aptinfo.html"><img className="pb-3 card-img-hover img-size" src={props.aptData.img} alt={props.aptData.name} /></a>
                         </div>
@@ -20,13 +31,6 @@ function AptCard(props) {
                         <span className="badge badge-primary badge-pill bg-primary distance">{props.aptData.distance} miles</span>
                         <span className="badge badge-primary badge-pill bg-primary distance">Rating:{props.aptData.rating}</span>
                     </div>
-                    {/* <i
-                        className="material-icons star-icon"
-                        onClick={props.handleSaveToggle}
-                        style={{ cursor: 'pointer', color: props.isSaved ? '#FF0000' : 'transparent' }}
-                    >
-                        {props.isSaved ? 'favorite' : 'favorite_border'}
-                    </i> */}
                 </div>
 
             </div>
@@ -34,7 +38,7 @@ function AptCard(props) {
                 <div className="card-body">
                     <div class="row">
                         <div className="col-sm-auto col-xl-12">
-                        <a href={props.aptData.website} target="blank"><h4 className= "apt-name">{props.aptData.name}</h4></a>
+                            <a href={props.aptData.website} target="blank"><h4 className="apt-name">{props.aptData.name}</h4></a>
                             {/* <p className="back-info">Floorplan: {props.aptData.floorplan} </p> */}
                             <p className="back-info">Average Price: ${props.aptData.price} </p>
                             {/* <p className="back-info">Size: {props.aptData.size} Sq ft.</p> */}
@@ -43,8 +47,11 @@ function AptCard(props) {
                         </div>
                     </div>
                 </div>
-
+                <button className="btn like" onClick={handleClick}>
+                    <span className="material-icons" style={{ color: heartColor }}>star</span>
+                </button>
             </div>
+
         </div >
     );
 
@@ -75,29 +82,27 @@ function AptList(props) {
 //         return apartmentPassesAllFilters;
 //     });
 
-    // return ( 
-    //     <div> 
-    //         {filteredApartments.map((apartment, index) => (
-    //         <div key={index}>
-    //             <h3>{apartment.name}</h3>
-    //             <img src={apartment.img} alt={apartment.name} />
-    //             <p>Distance to UW: {apartment.dist_to_uw} miles</p>
-    //             <p>Location to UW: {apartment.loc_to_uw} </p>
-    //             <p>Rating: {apartment.rating} </p>
-    //             <p>Floorplan: {apartment.floorplan} </p>
-    //             <p>Price: {apartment.price} </p>
-    //             <p>Size: {apartment.size} </p>
-    //             <p>
-    //             Website: <a href={apartment.website} target="blank">{apartment.website}</a>
-    //             </p>
-    //             <p>Phone: {apartment.phone} </p>
-    //             <p>Address: {apartment.address} </p>
-    //         </div>
-    //         ))}
-    //     </div>
-    // ); 
+// return ( 
+//     <div> 
+//         {filteredApartments.map((apartment, index) => (
+//         <div key={index}>
+//             <h3>{apartment.name}</h3>
+//             <img src={apartment.img} alt={apartment.name} />
+//             <p>Distance to UW: {apartment.dist_to_uw} miles</p>
+//             <p>Location to UW: {apartment.loc_to_uw} </p>
+//             <p>Rating: {apartment.rating} </p>
+//             <p>Floorplan: {apartment.floorplan} </p>
+//             <p>Price: {apartment.price} </p>
+//             <p>Size: {apartment.size} </p>
+//             <p>
+//             Website: <a href={apartment.website} target="blank">{apartment.website}</a>
+//             </p>
+//             <p>Phone: {apartment.phone} </p>
+//             <p>Address: {apartment.address} </p>
+//         </div>
+//         ))}
+//     </div>
+// ); 
 // }
-
-
 
 export { AptList }; 
