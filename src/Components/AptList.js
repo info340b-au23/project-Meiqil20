@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+import { getDatabase, ref, set as firebaseSet, get as firebaseGet } from 'firebase/database';
 
 function AptCard(props) {
+
     const [isLiked, setIsLiked] = useState(false);
 
     const handleClick = (event) => {
-        console.log("you liked a post!");
+        console.log("You liked " + props.aptData.name + " apartment!");
         setIsLiked(!isLiked);
+        props.onLike(props.aptData.name);
     }
 
-    let heartColor = 'grey';
+    let starColor = 'grey';
     if (isLiked) {
-        heartColor = 'red';
+        starColor = 'red';
     }
 
     return (
@@ -48,7 +51,7 @@ function AptCard(props) {
                     </div>
                 </div>
                 <button className="btn like" onClick={handleClick}>
-                    <span className="material-icons" style={{ color: heartColor }}>star</span>
+                    <span className="material-icons" style={{ color: starColor }}>star</span>
                 </button>
             </div>
 
@@ -58,51 +61,24 @@ function AptCard(props) {
 }
 
 function AptList(props) {
+    const [likedApartments, setLikedApartments] = useState([]);
+
+    const handleLike = (aptName) => {
+    if (!likedApartments.includes(aptName)) {
+      setLikedApartments([...likedApartments, aptName]);
+    }
+  };
+
     const aptCards = props.apts.map((apt, index) => {
         return (
             <div className="col-md-6 col-xl-3 d-flex mb-4">
-                <AptCard key={index} aptData={apt} />
+                <AptCard key={index} aptData={apt} onLike={handleLike}/>
             </div>
         );
     });
+    console.log("Liked Apartments Array:", likedApartments);
 
     return <div className="row">{aptCards}</div>;
 }
-
-// function ApartmentList({ apartment, filterName, filterDistance, filterPrice, filterSize, filterRating }) {
-//     const filteredApartments = apartmentData.filter((apartment) => {
-//         const nameMatchesFilter = !filterName || (apartment.name && apartment.name.toLowerCase().indexOf(filterName.toLowerCase())) !== -1;
-//         const distanceMatchesfilter = filterDistance === null || apartment.dist_to_uw <= filterDistance;
-//         const priceMatchesFilter = filterPrice === null || apartment.price <= filterPrice;
-//         const sizeMatchesFilter = filterSize === null || apartment.size <= filterSize;
-//         const ratingMatchesFilter = filterRating === null || apartment.rating >= filterRating;
-
-//         const apartmentPassesAllFilters = nameMatchesFilter && distanceMatchesfilter && priceMatchesFilter && sizeMatchesFilter && ratingMatchesFilter;
-
-//         return apartmentPassesAllFilters;
-//     });
-
-// return ( 
-//     <div> 
-//         {filteredApartments.map((apartment, index) => (
-//         <div key={index}>
-//             <h3>{apartment.name}</h3>
-//             <img src={apartment.img} alt={apartment.name} />
-//             <p>Distance to UW: {apartment.dist_to_uw} miles</p>
-//             <p>Location to UW: {apartment.loc_to_uw} </p>
-//             <p>Rating: {apartment.rating} </p>
-//             <p>Floorplan: {apartment.floorplan} </p>
-//             <p>Price: {apartment.price} </p>
-//             <p>Size: {apartment.size} </p>
-//             <p>
-//             Website: <a href={apartment.website} target="blank">{apartment.website}</a>
-//             </p>
-//             <p>Phone: {apartment.phone} </p>
-//             <p>Address: {apartment.address} </p>
-//         </div>
-//         ))}
-//     </div>
-// ); 
-// }
 
 export { AptList }; 

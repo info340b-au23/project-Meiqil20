@@ -5,7 +5,7 @@ import _ from 'lodash';
 
 export function HomePage(props) {
 
-    let sortingListItem = ["name", "distance", "rating", "price"];
+    let sortingListItem = ["Name", "Distance", "Rating", "Price"];
     const [SortName, setSort] = useState("");
     const [filterCriteria, setFilter] = useState({Sort: ""});
 
