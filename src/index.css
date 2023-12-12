@@ -93,8 +93,12 @@ footer a {
 }
 
 .img-size{
-    width: 1000px;
-    height: 200px;
+    /* width: 1000px;
+    height: 400px; */
+
+    width: 100%; /* Image width is 100% of its container or parent element */
+    height: auto; /* Maintain the aspect ratio and adjust height accordingly */
+    max-width: 1000px;
 }
 
 .card-title{
@@ -104,12 +108,6 @@ footer a {
 .card {
     border-radius: 10px;
 }
-
-.card-img-hover:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-}
-
 
 .location {
     margin-bottom: 10px;

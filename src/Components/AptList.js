@@ -17,12 +17,12 @@ function AptCard(props) {
     }
 
     return (
-        <div className="card card-flip h-100" >
+        <div className="card card-flip" >
             <div className="card-front">
                 <div className="card-body">
                     <div className="row">
                         <div className="col-sm-auto col-xl-12">
-                            <a href="aptinfo.html"><img className="pb-3 card-img-hover img-size" src={props.aptData.img} alt={props.aptData.name} /></a>
+                            <a href="aptinfo.html"><img className="pb-3 img-size" src={props.aptData.img} alt={props.aptData.name} /></a>
                         </div>
                         <div className="col-sm card-content">
                             <h2 className="card-title">{props.aptData.name}</h2>
@@ -42,9 +42,9 @@ function AptCard(props) {
                     <div className="row">
                         <div className="col-sm-auto col-xl-12">
                             <a href={props.aptData.website} target="blank"><h4 className="apt-name">{props.aptData.name}</h4></a>
-                            {/* <p className="back-info">Floorplan: {props.aptData.floorplan} </p> */}
+                            <p className="back-info">Floorplan: {props.aptData.floorPlan[0]} </p>
                             <p className="back-info">Average Price: ${props.aptData.price} </p>
-                            {/* <p className="back-info">Size: {props.aptData.size} Sq ft.</p> */}
+                            <p className="back-info">Size: {props.aptData.size} Sq ft.</p>
                             <p className="back-info">Phone: {props.aptData.phone} </p>
                             <p className="back-info">Address: {props.aptData.address} </p>
                         </div>

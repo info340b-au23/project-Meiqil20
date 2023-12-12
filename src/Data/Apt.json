@@ -41,7 +41,7 @@
   },
   {
     "name": "HERE Seattle",
-    "img": "/img/Here.jpeg",
+    "img": "/img/Here.jpg",
     "distance": 0.9,
     "loc_to_uw":"Northwest",
     "rating": 3.3,
