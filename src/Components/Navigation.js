@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export function NavBar() {
+export function NavBar({handleSearch}) {
 
     return (
         <nav className="navbar navbar-expand-lg justify-content-between gradient-custom">
@@ -20,11 +20,7 @@ export function NavBar() {
           </div>
         </div>
     
-        <form className="form-inline d-flex">
-          <input className="form-control search_bar_width" type="search" placeholder="Search" aria-label="Search" />
-          <button className="btn btn-outline-success mx-4" type="submit">Search</button>
-        </form>
-    
+
         <Link to="/Pages/login"><button type="button" className="btn btn-warning mx-4" style={{'whiteSpace': 'nowrap'}}>Log In</button></Link> 
     
       </nav>
