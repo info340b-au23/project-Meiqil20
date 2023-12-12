@@ -1,39 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import { AptList } from '../Components/AptList.js';
 import aptData from '../Data/Apt.json';
-import { getDatabase, ref, set as firebaseSet, get as firebaseGet } from 'firebase/database';
-
+import { getDatabase, ref, get as firebaseGet } from 'firebase/database';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom'; 
 
 export function ListPage() {
+    const auth = getAuth();
     const db = getDatabase();
-    const username = "Bonie";
-    const aptDataName = username + "/LikedApts";
-    const AptName = ref(db, aptDataName);
-
     const [likedAptsData, setLikedAptsData] = useState(null);
-    const likedApartments = ["Trailside", "Bridges"];
-
-    firebaseSet(AptName, likedApartments);
+    const navigate = useNavigate(); 
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchData = async (userId) => {
+            const AptName = ref(db, `users/${userId}/LikedApts`);
             try {
                 const snapshot = await firebaseGet(AptName);
                 const data = snapshot.val();
-                if (JSON.stringify(data) !== JSON.stringify(likedAptsData)) {
-                    setLikedAptsData(data);
-                }
+                setLikedAptsData(data);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
         };
 
-        fetchData();
-    }, [AptName]);
+        const unregisterAuthObserver = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                fetchData(user.uid);
+            } else {
+                navigate('/Pages/login');
+                window.alert("Please log in first");
+            }
+        });
 
-    const filteredAptData = aptData.filter(apartment => likedAptsData 
+        return () => unregisterAuthObserver();
+    }, [auth, db, navigate]);
+
+    const filteredAptData = aptData.filter(apartment => likedAptsData
         && likedAptsData.includes(apartment.name));
-        
+
     return (
         <div>
             <header>
@@ -44,5 +48,5 @@ export function ListPage() {
                 <AptList apts={filteredAptData} />
             </div>
         </div>
-    )
+    );
 }

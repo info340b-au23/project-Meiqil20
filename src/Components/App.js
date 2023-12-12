@@ -1,14 +1,10 @@
-import React from 'react'; //import React Component
+import React from 'react';
 import { NavBar } from './Navigation.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HomePage } from '../Pages/HomePage.js'
 import { ComparePage } from '../Pages/ComparePage.js'
 import { ListPage } from '../Pages/ListPage.js'
 import { LoginPage } from '../Pages/LoginPage.js'
-
-//https://www.freecodecamp.org/news/how-to-convert-a-string-to-a-number-in-javascript/
-
-
 
 
 function App(props) {
